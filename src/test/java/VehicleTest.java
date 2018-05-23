@@ -7,12 +7,16 @@ import static org.junit.Assert.*;
 
 public class VehicleTest {
     private StandardCar standardCar;
+    private Truck truck;
     private Engine engine;
+    private Engine truckEngine;
 
     @Before
     public void before() {
         engine = new Engine(1600, FuelType.PETROL);
+        truckEngine = new Engine(2500, FuelType.DIESEL);
         standardCar = new StandardCar("Ford", "Capri", 2000, "Pea Green", 4, engine);
+        truck = new Truck("Nissan", "Cabstar", 1000, "White", 3, truckEngine);
     }
 
     @Test
@@ -48,10 +52,12 @@ public class VehicleTest {
     @Test
     public void canGetWheelType() {
         assertEquals(WheelType.STANDARD, standardCar.getWheelType());
+        assertEquals(WheelType.COMMERCIAL, truck.getWheelType());
     }
 
     @Test
     public void canGetWheelCount() {
         assertEquals(4, standardCar.getWheelCount());
+        assertEquals(6, truck.getWheelCount());
     }
 }

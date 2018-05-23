@@ -8,4 +8,12 @@ public class Engine {
         this.size = size;
         this.fuelType = fuelType;
     }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public FuelType getFuelType() {
+        return this.fuelType;
+    }
 }
